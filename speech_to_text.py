@@ -36,7 +36,7 @@ while(1):
 			r.adjust_for_ambient_noise(source2, duration=0.2)
 			
 			#listens for the user's input 
-			audio2 = r.listen(source2)
+			audio2 = r.listen(source2, 10, 3)
 			
 			# Using google to recognize audio
 			MyText = r.recognize_google(audio2)
@@ -44,7 +44,7 @@ while(1):
 
 			# print("Did you say ",MyText)
 			print(MyText)
-			SpeakText(MyText)
+			# SpeakText(MyText)
 			
 	except sr.RequestError as e:
 		print("Could not request results; {0}".format(e))
