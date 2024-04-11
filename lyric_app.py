@@ -5,9 +5,13 @@ class lyric_app:
     def __init__(self, root):
         self.root = root
         self.root.title("Lyric App")
+	
+        self.listening = False
 
         # Listen button
-        self.listen_button = tk.Button(root, text="Listen", command=self.listen_audio)
+        self.listen_button_text = tk.StringVar()
+        self.listen_button_text.set("Listen")
+        self.listen_button = tk.Button(root, textvariable=self.listen_button_text, command=self.toggle_listen)
         self.listen_button.grid(row=0, column=0, padx=10, pady=10)
 
         # Import Lyric Files button
@@ -28,21 +32,29 @@ class lyric_app:
         root.grid_rowconfigure(2, weight=1)
         root.grid_columnconfigure(1, weight=1)
 
-    def listen_audio(self):
-        # Add code here
-        pass
+    def toggle_listen(self):
+        # Toggle listening state and update button text
+        self.listening = not self.listening
+        if self.listening:
+            self.listen_button_text.set("Stop")
+            # Add code to start listening here
+        else:
+            self.listen_button_text.set("Listen")
+            # Add code to stop listening here
 
     def import_lyric_files(self):
         # Open file 
         lyric_files = filedialog.askopenfilenames(title="Select Lyric Files", filetypes=(("Lyric files", "*.txt"), ("All files", "*.*")))
-
         # Display selected files 
         if lyric_files:
-            self.listbox.delete(0, tk.END)  # Clear previous selection
             for file in lyric_files:
                 self.listbox.insert(tk.END, file)
 
     def display_selected_file(self, event):
+
+        # Clear the text display area
+        self.text_display.delete(1.0, tk.END)
+
         # Get the selected file from the listbox
         selected_file_index = self.listbox.curselection()
         if selected_file_index:
@@ -50,7 +62,6 @@ class lyric_app:
             # Displays the content from the file
             with open(selected_file, 'r') as f:
                 content = f.read()
-                self.text_display.delete(1.0, tk.END)  # Clear previous text
                 self.text_display.insert(tk.END, content)
 
 
