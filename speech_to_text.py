@@ -16,15 +16,12 @@ def SpeakText(command):
 	engine = pyttsx3.init()
 	engine.say(command) 
 	engine.runAndWait()
-	
-	
-# Loop infinitely for user to
-# speak
 
-while(1): 
+def get_text():
 	
 	# Exception handling to handle
 	# exceptions at the runtime
+
 	try:
 		
 		# use the microphone as source for input.
@@ -41,13 +38,24 @@ while(1):
 			# Using google to recognize audio
 			MyText = r.recognize_google(audio2)
 			MyText = MyText.lower()
-
-			# print("Did you say ",MyText)
 			print(MyText)
+			return MyText
+			# print("Did you say ",MyText)
+			# print(MyText)
 			# SpeakText(MyText)
 			
 	except sr.RequestError as e:
 		print("Could not request results; {0}".format(e))
+		return ""
 		
 	except sr.UnknownValueError:
 		print("...")
+		return ""
+	
+	
+# Loop infinitely for user to
+# speak
+
+if __name__ == "__main__":
+	while(1): 
+		text_heard = get_text()

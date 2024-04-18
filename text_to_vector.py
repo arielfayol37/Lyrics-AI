@@ -21,6 +21,7 @@ def attention_pooling(hidden_states, attention_mask):
     pooled_output = (masked_hidden_states * attention_scores).sum(dim=1)
     return pooled_output
 
+
 lyrics = {"ariel":"I love you babe", "john":"calamity is a bad thing", "naija":"Nigerians are scary", "girlfriend":"She is very beautiful, and she is lightskin. She also has very long hair and smells nice and she is good at physics."}
 
 def search_lyric(lyric):
@@ -59,4 +60,4 @@ def search_lyric(lyric):
         top_similar_questions = heapq.nlargest(top_n, similar_questions, key=lambda x: x['similarity'])
         print(top_similar_questions)
 
-search_lyric("My girlfriend has long hair and she is good at physics. She is gorgeous")
+# search_lyric("My girlfriend has long hair and she is good at physics. She is gorgeous")
