@@ -1,3 +1,9 @@
 pyaudio
 speechRecognition
 torch
+numpy
+tensorflow
+tensorflow_hub
+transformers
+scikit-learn
+sentence-transformers
