@@ -14,7 +14,7 @@ The Lyric App is a Python application that allows users to import lyric files, l
 2. Navigate to the project directory:
 
     ```
-    cd lyric-app
+    cd lyric-ai
     ```
 
 3. Install the required dependencies. Ensure you have Python 3.x installed on your system. Install dependencies using pip:

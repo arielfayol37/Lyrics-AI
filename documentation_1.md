@@ -1,6 +1,25 @@
 # Lyric App Documentation
+---
+## [toggle_listen()](#toggle_listen)
+Toggle Listening
+
+## [listen_audio()](#listen_audio)
+Listen to Audio
+
+## [import_lyric_files()](#import_lyric_files)
+Import Lyric Files
+
+## [display_selected_file(event)](#display_selected_file)
+Display Selected File
+
+## [__init__(self, root)](#init)
+Initialize GUI Application
+
+## [lyric_app(root)](#lyric_app)
+Constructor Method for lyric_app Class
 
 ## Introduction
+---
 This application allows users to import lyric files, listen to audio input, and display lyrics based on the audio input's similarity to the imported lyrics. The application is built using the Tkinter library for the GUI, and it incorporates functionalities for text processing, file handling, and audio processing.
 
 ## Code Structure
@@ -19,31 +38,14 @@ The code is divided into several sections, each serving a specific purpose:
 6. **Main Application**: The main application window is created using Tkinter, and an instance of the `lyric_app` class is instantiated.
 
 ## Method Details
-1. **`encode_text(text)`**
-   - **Purpose**: This function encodes the input text into numerical representations using BERT embeddings.
-   - **Parameters**: `text`: The input text to be encoded.
-   - **Return Value**: A numerical representation of the input text obtained through BERT embeddings.
-   - **Usage**: This function is used to convert lyrics text into numerical vectors for comparison and analysis.
 
-2. **`embed(text)`**
-   - **Purpose**: This function encodes the input text into numerical representations using Sentence Transformers.
-   - **Parameters**: `text`: The input text to be encoded.
-   - **Return Value**: A numerical representation of the input text obtained through Sentence Transformers.
-   - **Usage**: Similar to `encode_text()`, this function is used to convert lyrics text into numerical vectors for comparison and analysis, but it employs a different embedding method.
-
-3. **`process_files(lyrics_directory)`**
-   - **Purpose**: This function processes text files in a specified directory, extracting their content, and encoding them into numerical representations using the `embed()` function.
-   - **Parameters**: `lyrics_directory`: The directory path where the lyric files are stored.
-   - **Return Value**: A dictionary containing the processed lyrics, with keys representing file IDs and values containing the text content and corresponding embeddings.
-   - **Usage**: This function is called to prepare the lyric data for the application, extracting and encoding lyrics from text files stored in a specified directory.
-
-4. **`toggle_listen()`**
+1. **`toggle_listen()`**
    - **Purpose**: This method toggles the audio listening functionality of the application.
    - **Functionality**:
      - Changes the button text and starts or stops the audio listening thread accordingly.
    - **Usage**: It is triggered by clicking the "Start Listening" button and controls the audio input processing.
 
-5. **`listen_audio()`**
+2. **`listen_audio()`**
    - **Purpose**: This method continuously listens for audio input while the application is in the listening state.
    - **Functionality**:
      - Utilizes `get_text()` to retrieve the text from audio input.
@@ -51,27 +53,27 @@ The code is divided into several sections, each serving a specific purpose:
      - Compares the embeddings with preprocessed lyrics and displays the most similar lyrics.
    - **Usage**: Called when the application is in the listening state to process audio input and display relevant lyrics.
 
-6. **`import_lyric_files()`**
+3. **`import_lyric_files()`**
    - **Purpose**: This method handles the importation of lyric files into the application.
    - **Functionality**:
      - Opens a file dialog for users to select and import lyric files.
      - Displays the selected files in the listbox.
    - **Usage**: Triggered by clicking the "Import Lyric Files" button to allow users to import lyric files into the application.
 
-7. **`display_selected_file(event)`**
+4. **`display_selected_file(event)`**
    - **Purpose**: This method displays the content of a selected file in the text display area.
    - **Functionality**:
      - Retrieves the selected file from the listbox.
      - Reads the file's content and displays it in the text display area.
    - **Usage**: Triggered by double-clicking a file in the listbox to display its content in the text display area.
 
-8. **`__init__(self, root)`**
+5. **`__init__(self, root)`**
    - **Purpose**: This method initializes the GUI application.
    - **Functionality**:
      - Sets up the main application window and its components, including buttons, listbox, and text display area.
    - **Usage**: Called when an instance of the `lyric_app` class is created to initialize the GUI.
 
-9. **`lyric_app(root)`**
+6. **`lyric_app(root)`**
    - **Purpose**: Constructor method for the `lyric_app` class.
    - **Functionality**:
      - Initializes the main application window and its components.
