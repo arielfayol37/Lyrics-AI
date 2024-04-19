@@ -35,13 +35,13 @@ The code is divided into several sections, each serving a specific purpose:
 6. **Main Application**: The main application window is created using Tkinter, and an instance of the `lyric_app` class is instantiated.
 
 ## Method Details
-1. **`toggle_listen()`**
+1. **`toggle_listen()`** <a name="toggle_listen"></a>
    - **Purpose**: This method toggles the audio listening functionality of the application.
    - **Functionality**:
      - Changes the button text and starts or stops the audio listening thread accordingly.
    - **Usage**: It is triggered by clicking the "Start Listening" button and controls the audio input processing.
 
-2. **`listen_audio()`**
+2. **`listen_audio()`** <a name="listen_audio"></a>
    - **Purpose**: This method continuously listens for audio input while the application is in the listening state.
    - **Functionality**:
      - Utilizes `get_text()` to retrieve the text from audio input.
@@ -49,27 +49,27 @@ The code is divided into several sections, each serving a specific purpose:
      - Compares the embeddings with preprocessed lyrics and displays the most similar lyrics.
    - **Usage**: Called when the application is in the listening state to process audio input and display relevant lyrics.
 
-3. **`import_lyric_files()`**
+3. **`import_lyric_files()`** <a name="import_lyric_files"></a>
    - **Purpose**: This method handles the importation of lyric files into the application.
    - **Functionality**:
      - Opens a file dialog for users to select and import lyric files.
      - Displays the selected files in the listbox.
    - **Usage**: Triggered by clicking the "Import Lyric Files" button to allow users to import lyric files into the application.
 
-4. **`display_selected_file(event)`**
+4. **`display_selected_file(event)`** <a name="display_selected_fileevent"></a>
    - **Purpose**: This method displays the content of a selected file in the text display area.
    - **Functionality**:
      - Retrieves the selected file from the listbox.
      - Reads the file's content and displays it in the text display area.
    - **Usage**: Triggered by double-clicking a file in the listbox to display its content in the text display area.
 
-5. **`__init__(self, root)`**
+5. **`__init__(self, root)`** <a name="init"></a>
    - **Purpose**: This method initializes the GUI application.
    - **Functionality**:
      - Sets up the main application window and its components, including buttons, listbox, and text display area.
    - **Usage**: Called when an instance of the `lyric_app` class is created to initialize the GUI.
 
-6. **`lyric_app(root)`**
+6. **`lyric_app(root)`** <a name="lyric_app-root"></a>
    - **Purpose**: Constructor method for the `lyric_app` class.
    - **Functionality**:
      - Initializes the main application window and its components.
