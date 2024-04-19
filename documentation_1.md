@@ -1,5 +1,7 @@
 # Lyric App Documentation
 ---
+This application allows users to import lyric files, listen to audio input, and display lyrics based on the audio input's similarity to the imported lyrics. The application is built using the Tkinter library for the GUI, and it incorporates functionalities for text processing, file handling, and audio processing.
+
 ## [toggle_listen()](#toggle_listen)
 Toggle Listening
 
@@ -9,36 +11,30 @@ Listen to Audio
 ## [import_lyric_files()](#import_lyric_files)
 Import Lyric Files
 
-## [display_selected_file(event)](#display_selected_file)
+## [display_selected_file(event)](#display_selected_file-event)
 Display Selected File
 
 ## [__init__(self, root)](#init)
 Initialize GUI Application
 
-## [lyric_app(root)](#lyric_app)
+## [lyric_app(root)](#lyric_app-root)
 Constructor Method for lyric_app Class
 
 ## Introduction
 ---
-This application allows users to import lyric files, listen to audio input, and display lyrics based on the audio input's similarity to the imported lyrics. The application is built using the Tkinter library for the GUI, and it incorporates functionalities for text processing, file handling, and audio processing.
 
 ## Code Structure
 The code is divided into several sections, each serving a specific purpose:
 
 1. **Importing Libraries**: The necessary libraries are imported, including Tkinter for GUI development, filedialog for file handling, and various modules for text and audio processing.
 
-2. **Text Encoding Functions**: Functions for encoding text into numerical representations are defined. This includes `encode_text` for encoding using BERT embeddings and `embed` for encoding using Sentence Transformers.
-
 3. **File Processing**: The `process_files` function reads text files from a specified directory, extracts their content, and encodes the text using the `embed` function.
-
-4. **GUI Class**: The `lyric_app` class defines the GUI application. It includes buttons for starting and stopping audio listening, importing lyric files, a listbox for displaying selected files, and a text area for displaying lyrics.
 
 5. **Event Handlers**: Event handlers are defined for interacting with GUI elements. These include functions for toggling audio listening, importing lyric files, and displaying selected files.
 
 6. **Main Application**: The main application window is created using Tkinter, and an instance of the `lyric_app` class is instantiated.
 
 ## Method Details
-
 1. **`toggle_listen()`**
    - **Purpose**: This method toggles the audio listening functionality of the application.
    - **Functionality**:
@@ -87,18 +83,19 @@ The code is divided into several sections, each serving a specific purpose:
 5. **Viewing Selected Files**: Double-click on a file in the listbox to display its content in the text display area.
 
 ## Dependencies
--Python3
--pyaudio
--speechRecognition
--torch
--numpy
--tensorflow
--tensorflow_hub
--transformers
--scikit-learn
--sentence-transformers
+- Python3
+- pyaudio
+- speechRecognition
+- torch
+- numpy
+- tensorflow
+- tensorflow_hub
+- transformers
+- scikit-learn
+- sentence-transformers
+
+Ensure that the required modules (`speech_to_text`, `text_to_vector`, etc.) are correctly installed and accessible in the Python environment.
 
 ## Note
-- Ensure that the required modules (`speech_to_text`, `text_to_vector`, etc.) are correctly installed and accessible in the Python environment.
-- Modify the `lyrics_directory` variable to specify the directory containing the lyric files.
+- Modify the `lyrics_directory` variable in the code to specify the directory containing the lyric files.
 
