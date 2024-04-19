@@ -1,6 +1,5 @@
 # Lyric App Documentation
 ---
-This application allows users to import lyric files, listen to audio input, and display lyrics based on the audio input's similarity to the imported lyrics. The application is built using the Tkinter library for the GUI, and it incorporates functionalities for text processing, file handling, and audio processing.
 
 ## [toggle_listen()](#toggle_listen)
 Toggle Listening
@@ -22,6 +21,7 @@ Constructor Method for lyric_app Class
 
 ## Introduction
 ---
+This application allows users to import lyric files, listen to audio input, and display lyrics based on the audio input's similarity to the imported lyrics. The application is built using the Tkinter library for the GUI, and it incorporates functionalities for text processing, file handling, and audio processing.
 
 ## Code Structure
 The code is divided into several sections, each serving a specific purpose:
