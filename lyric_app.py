@@ -1,16 +1,3 @@
-
-# import re
-# import seaborn as sns
-import os
-print(os.getcwd())
-# lyrics_directory = "./lyrics_folder/"
-
-# module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
-# model = hub.load(module_url)
-# print ("module %s loaded" % module_url)
-# def embed_0(input):
-#   return model(input)
-"""
 import tkinter as tk
 from tkinter import filedialog
 
@@ -24,6 +11,16 @@ import tensorflow_hub as hub
 import numpy as np
 
 from sentence_transformers import SentenceTransformer
+# import re
+# import seaborn as sns
+
+lyrics_directory = "lyrics_folder/"
+
+# module_url = "https://tfhub.dev/google/universal-sentence-encoder/4"
+# model = hub.load(module_url)
+# print ("module %s loaded" % module_url)
+# def embed_0(input):
+#   return model(input)
 
 def encode_text(text):
     # max_length = 512 # maybe we should reduce this because the input text should be quite short
@@ -175,4 +172,3 @@ root.grid_columnconfigure(0, weight=1)
 
 root.mainloop()
 
-"""
