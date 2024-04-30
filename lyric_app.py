@@ -60,9 +60,10 @@ def process_files(lyrics_directory):
     
     return lyrics
 
-
-lyrics = process_files(lyrics_directory)
-
+counter = -1
+# lyrics = process_files(lyrics_directory)
+lyrics = {}
+imported_files = []
 # print(lyrics[0])
 
 class lyric_app:
@@ -124,14 +125,30 @@ class lyric_app:
 
 
     def import_lyric_files(self):
+        global counter
         # Open file 
         lyric_files = filedialog.askopenfilenames(title="Select Lyric Files", filetypes=(("Lyric files", "*.txt"), ("All files", "*.*")))
 
         # Display selected files 
         if lyric_files:
             self.listbox.delete(0, tk.END)  # Clear previous selection
-            for file in lyric_files:
-                self.listbox.insert(tk.END, file)
+
+            for filename in lyric_files:
+                # Create the full file path
+                file_path = filename
+                
+                # Check if it is a file (and not a directory)
+                if os.path.isfile(file_path) and file_path[-4:] == ".txt" and file_path not in imported_files:
+                    counter += 1
+                    lyrics[counter] = {"text":""}
+                # Open the file using the 'open' function with 'r' mode (read mode)
+                    with open(file_path, 'r') as file:
+                        # Read the contents of the file
+                        content = file.read()
+                    lyrics[counter]["text"] = content
+                    lyrics[counter]["embedding"] = embed(content)
+            
+                self.listbox.insert(tk.END, os.path.basename(file_path))
 
     def display_selected_file(self, event):
         # Get the selected file from the listbox
