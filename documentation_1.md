@@ -23,6 +23,12 @@ Constructor Method for lyric_app Class
 ---
 This application allows users to import lyric files, listen to audio input, and display lyrics based on the audio input's similarity to the imported lyrics. The application is built using the Tkinter library for the GUI, and it incorporates functionalities for text processing, file handling, and audio processing.
 
+## General Idea
+- Take in user audio input using pyttsx3 library
+- The input will automatically be converted to plain text
+- Embed the text into a vector
+- Compared the vector to preprocessed vectors from uploaded text files and return the highest match
+
 ## Code Structure
 The code is divided into several sections, each serving a specific purpose:
 
