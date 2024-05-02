@@ -41,6 +41,7 @@ The Lyric App is a Python application that allows users to import lyric files, l
 
 ## Dependencies
 
+- pyttsx3
 - pyaudio
 - speechRecognition
 - torch
